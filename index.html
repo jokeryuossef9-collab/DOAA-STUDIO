@@ -6,11 +6,7 @@
   <title>JOKER DESIGNER | مصمم جرافيك</title>
   <style>
     /* ===== إعادة تعيين وأساسيات ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg-primary: #0a0a0a;
@@ -25,8 +21,8 @@
       --success: #22c55e;
       --error: #ef4444;
       --radius: 12px;
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
     }
 
     body {
@@ -36,405 +32,143 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
     a:hover { color: var(--accent-hover); }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* ===== شريط التنقل ===== */
     .navbar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
+      position: fixed; top: 0; right: 0; left: 0; z-index: 1000;
+      background: rgba(10,10,10,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 16px 0;
     }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--text-primary);
-    }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; }
     .logo span { color: var(--accent); }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ===== القسم الرئيسي (Hero) ===== */
+    /* ===== Hero ===== */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 80px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(255, 107, 0, 0.08) 0%, transparent 60%);
+      min-height: 100vh; display: flex; align-items: center; padding-top: 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.08) 0%, transparent 60%);
     }
     .hero-content { max-width: 700px; }
     .hero-content .greeting {
-      font-size: 1rem;
-      color: var(--accent);
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+      font-size: 1rem; color: var(--accent); font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
     }
-    .hero-content h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+    .hero-content h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
     .hero-content h1 .highlight {
       background: linear-gradient(135deg, var(--accent), #ffb347);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .hero-content p {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      max-width: 550px;
-    }
+    .hero-content p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 550px; }
+
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      border-radius: var(--radius);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      border: none;
-      font-family: inherit;
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
+      border-radius: var(--radius); font-size: 1rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition); border: none; font-family: inherit;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .btn-danger {
-      background: var(--error);
-      color: #fff;
-    }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
+    .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-danger { background: var(--error); color: #fff; }
     .btn-danger:hover { background: #dc2626; }
     .btn-sm { padding: 8px 16px; font-size: 0.85rem; }
 
-    /* ===== الأقسام العامة ===== */
     section { padding: 100px 0; }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
     .section-title span { color: var(--accent); }
-    .section-subtitle {
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-      font-size: 1.05rem;
-    }
+    .section-subtitle { color: var(--text-secondary); margin-bottom: 48px; font-size: 1.05rem; }
 
     /* ===== شبكة المشاريع ===== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
     .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: transform var(--transition), box-shadow var(--transition);
       animation: fadeInUp 0.5s ease both;
     }
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-      border-color: rgba(255, 107, 0, 0.3);
-    }
-    .project-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(255,107,0,0.3); }
+    .project-card img { width: 100%; height: 220px; object-fit: cover; display: block; background: var(--bg-elevated); }
     .project-card .card-body { padding: 20px; }
     .project-card .card-category {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      background: rgba(255, 107, 0, 0.1);
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 10px;
+      display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--accent); background: rgba(255,107,0,0.1);
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
     }
-    .project-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+    .project-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .project-card p { color: var(--text-secondary); font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* ===== قسم نبذة ===== */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-text p {
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-      font-size: 1.05rem;
-    }
-    .social-links {
-      display: flex;
-      gap: 16px;
-      margin-top: 28px;
-    }
+    /* ===== About ===== */
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem; }
+    .social-links { display: flex; gap: 16px; margin-top: 28px; }
     .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      font-size: 1.2rem;
-      transition: all var(--transition);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px; border-radius: 50%; background: var(--bg-elevated);
+      border: 1px solid var(--border); font-size: 1.2rem; transition: all var(--transition);
     }
-    .social-links a:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
+    .social-links a:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
 
     /* ===== لوحة التحكم ===== */
-    .admin-panel {
-      display: none; /* تُظهر فقط بعد تسجيل الدخول */
-      padding: 120px 0 80px;
-      background: var(--bg-secondary);
-      min-height: 100vh;
-    }
+    .admin-panel { display: none; padding: 120px 0 80px; background: var(--bg-secondary); min-height: 100vh; }
     .admin-panel.active { display: block; }
-    .admin-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+    .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
     .admin-header h2 { font-size: 1.8rem; }
-    .admin-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-      flex-wrap: wrap;
-    }
+    .admin-tabs { display: flex; gap: 8px; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 8px; flex-wrap: wrap; }
     .admin-tab {
-      padding: 10px 20px;
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: all var(--transition);
-      font-family: inherit;
+      padding: 10px 20px; background: transparent; border: none; color: var(--text-secondary);
+      font-size: 0.95rem; font-weight: 600; cursor: pointer; border-radius: 8px;
+      transition: all var(--transition); font-family: inherit;
     }
-    .admin-tab.active {
-      background: var(--accent);
-      color: #000;
-    }
+    .admin-tab.active { background: var(--accent); color: #000; }
     .admin-tab:hover:not(.active) { color: var(--text-primary); }
 
     .admin-section { display: none; }
     .admin-section.active { display: block; }
 
-    /* ===== النماذج ===== */
     .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-secondary); }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 12px 16px; background: var(--bg-primary);
+      border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary);
+      font-size: 0.95rem; font-family: inherit; transition: border-color var(--transition);
     }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-primary);
-      font-size: 0.95rem;
-      font-family: inherit;
-      transition: border-color var(--transition);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
     .form-group textarea { min-height: 100px; resize: vertical; }
 
-    .login-box {
-      max-width: 420px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      padding: 40px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-    .login-box h2 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .login-box .login-subtitle {
-      text-align: center;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      font-size: 0.9rem;
-    }
+    .login-box { max-width: 420px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: var(--radius); border: 1px solid var(--border); }
+    .login-box h2 { text-align: center; margin-bottom: 8px; }
+    .login-box .login-subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 32px; font-size: 0.9rem; }
 
-    /* ===== جدول المشاريع ===== */
-    .projects-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .projects-table th,
-    .projects-table td {
-      padding: 14px 16px;
-      text-align: right;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-    .projects-table th {
-      background: var(--bg-elevated);
-      font-weight: 700;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
+    .projects-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; }
+    .projects-table th, .projects-table td { padding: 14px 16px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .projects-table th { background: var(--bg-elevated); font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
     .projects-table tr:last-child td { border-bottom: none; }
-    .projects-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
-    .table-thumb {
-      width: 60px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
+    .projects-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .table-thumb { width: 60px; height: 40px; object-fit: cover; border-radius: 6px; background: var(--bg-elevated); }
 
-    /* ===== رسائل الحالة ===== */
     .toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--bg-elevated);
-      color: var(--text-primary);
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      z-index: 3000;
-      opacity: 0;
-      transition: all 0.4s ease;
-      font-weight: 500;
-      max-width: 90%;
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+      background: var(--bg-elevated); color: var(--text-primary); padding: 14px 28px;
+      border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);
+      z-index: 3000; opacity: 0; transition: all 0.4s ease; font-weight: 500; max-width: 90%;
     }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     .toast.success { border-color: var(--success); }
     .toast.error { border-color: var(--error); }
 
-    .spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
+    .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .loading-state {
-      text-align: center;
-      padding: 60px 0;
-      color: var(--text-secondary);
-    }
-    .empty-state {
-      text-align: center;
-      padding: 60px 0;
-      color: var(--text-secondary);
-    }
+    .loading-state, .empty-state { text-align: center; padding: 60px 0; color: var(--text-secondary); }
 
-    /* ===== الاستجابة ===== */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .about-content { grid-template-columns: 1fr; gap: 32px; }
@@ -460,7 +194,7 @@
     </div>
   </nav>
 
-  <!-- ===== القسم الرئيسي ===== -->
+  <!-- ===== Hero ===== -->
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
@@ -472,7 +206,7 @@
     </div>
   </section>
 
-  <!-- ===== قسم المشاريع (للزوار) ===== -->
+  <!-- ===== المشاريع (للزوار) ===== -->
   <section id="projects">
     <div class="container">
       <h2 class="section-title">أعمالي <span>المميزة</span></h2>
@@ -483,7 +217,7 @@
     </div>
   </section>
 
-  <!-- ===== قسم نبذة ===== -->
+  <!-- ===== نبذة ===== -->
   <section id="about" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="about-content">
@@ -503,11 +237,11 @@
     </div>
   </section>
 
-  <!-- ===== لوحة التحكم (مخفية افتراضيًا) ===== -->
+  <!-- ===== لوحة التحكم ===== -->
   <div class="admin-panel" id="adminPanel">
     <div class="container">
 
-      <!-- شاشة تسجيل الدخول -->
+      <!-- تسجيل الدخول -->
       <div id="loginSection">
         <div class="login-box">
           <h2>لوحة التحكم</h2>
@@ -521,9 +255,7 @@
               <label for="loginPassword">كلمة المرور</label>
               <input type="password" id="loginPassword" placeholder="••••••••" required />
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;" id="loginBtn">
-              تسجيل الدخول
-            </button>
+            <button type="submit" class="btn btn-primary" style="width:100%;" id="loginBtn">تسجيل الدخول</button>
           </form>
         </div>
       </div>
@@ -534,6 +266,7 @@
           <h2>مرحبًا، <span id="adminEmailDisplay"></span></h2>
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <button class="btn btn-outline btn-sm" id="testConnectionBtn">🔌 اختبار اتصال Firebase</button>
+            <button class="btn btn-outline btn-sm" id="seedTestProjectBtn">🧪 إضافة مشروع تجريبي (Test Project)</button>
             <button class="btn btn-danger btn-sm" id="logoutBtn">تسجيل الخروج</button>
           </div>
         </div>
@@ -543,14 +276,14 @@
           <button class="admin-tab" data-tab="addProject">إضافة / تعديل مشروع</button>
         </div>
 
-        <!-- تبويب إدارة المشاريع -->
+        <!-- إدارة المشاريع -->
         <div class="admin-section active" id="manageProjectsSection">
           <div id="adminProjectsTableContainer">
             <div class="loading-state"><div class="spinner"></div><p>جاري تحميل المشاريع...</p></div>
           </div>
         </div>
 
-        <!-- تبويب إضافة / تعديل مشروع -->
+        <!-- إضافة / تعديل -->
         <div class="admin-section" id="addProjectSection">
           <form id="projectForm" style="max-width:600px;">
             <input type="hidden" id="editProjectId" value="" />
@@ -567,16 +300,12 @@
               <input type="text" id="projectCategory" placeholder="مثال: هوية بصرية، شعار، سوشيال ميديا" required />
             </div>
             <div class="form-group">
-              <label for="projectImage">صورة المشروع *</label>
+              <label for="projectImage">صورة المشروع (اختياري - إذا تُركت فارغة سيتم استخدام صورة افتراضية)</label>
               <input type="file" id="projectImage" accept="image/*" />
-              <small style="color:var(--text-secondary);">اتركه فارغًا عند التعديل إذا كنت لا تريد تغيير الصورة.</small>
               <div id="imagePreview" style="margin-top:12px;"></div>
             </div>
             <div class="form-group">
-              <label>
-                <input type="checkbox" id="projectPublished" checked style="width:auto; margin-left:8px;" />
-                نشر المشروع (مرئي للزوار)
-              </label>
+              <label><input type="checkbox" id="projectPublished" checked style="width:auto; margin-left:8px;" /> نشر المشروع (مرئي للزوار)</label>
             </div>
             <div style="display:flex; gap:12px;">
               <button type="submit" class="btn btn-primary" id="saveProjectBtn">حفظ المشروع</button>
@@ -588,46 +317,26 @@
     </div>
   </div>
 
-  <!-- ===== Toast ===== -->
   <div class="toast" id="toast"></div>
 
-  <!-- ===== كود Firebase (ES Modules) ===== -->
+  <!-- ============================================================
+       كود Firebase - ES Modules
+       ============================================================ -->
   <script type="module">
-    // ============================================================
-    // 1) استيراد مكتبات Firebase (إصدار ثابت 11.0.0)
-    // ============================================================
+    // 1) الاستيراد
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
     import {
-      getAuth,
-      signInWithEmailAndPassword,
-      onAuthStateChanged,
-      signOut
+      getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
     } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
     import {
-      getFirestore,
-      collection,
-      doc,
-      getDoc,
-      getDocs,
-      addDoc,
-      updateDoc,
-      deleteDoc,
-      onSnapshot,
-      query,
-      where,
-      serverTimestamp
+      getFirestore, collection, doc, getDoc, getDocs, addDoc,
+      updateDoc, deleteDoc, onSnapshot, query, where, serverTimestamp
     } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
     import {
-      getStorage,
-      ref,
-      uploadBytes,
-      getDownloadURL,
-      deleteObject
+      getStorage, ref, uploadBytes, getDownloadURL, deleteObject
     } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
 
-    // ============================================================
-    // 2) إعدادات Firebase (كما هي، لا تُستبدل)
-    // ============================================================
+    // 2) إعدادات Firebase (الأصلية - لا تُستبدل)
     const firebaseConfig = {
       apiKey: "AIzaSyBldI4G9Pf-IxK0erawkGYZtI-VjbgVApw",
       authDomain: "doaa-studio.firebaseapp.com",
@@ -643,23 +352,14 @@
     const db = getFirestore(app);
     const storage = getStorage(app);
 
-    // ============================================================
-    // 3) تحليلات Firebase (اختياري)
-    // ============================================================
+    // 3) تحليلات (اختياري)
     let analytics = null;
     try {
-      const { getAnalytics, isSupported } =
-        await import("https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js");
-      if (await isSupported()) {
-        analytics = getAnalytics(app);
-      }
-    } catch (e) {
-      console.warn("Analytics غير متاح:", e);
-    }
+      const { getAnalytics, isSupported } = await import("https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js");
+      if (await isSupported()) analytics = getAnalytics(app);
+    } catch (e) { console.warn("Analytics غير متاح:", e); }
 
-    // ============================================================
     // 4) عناصر DOM
-    // ============================================================
     const adminPanel = document.getElementById("adminPanel");
     const loginSection = document.getElementById("loginSection");
     const dashboardSection = document.getElementById("dashboardSection");
@@ -681,26 +381,22 @@
     const cancelEditBtn = document.getElementById("cancelEditBtn");
     const imagePreview = document.getElementById("imagePreview");
     const testConnectionBtn = document.getElementById("testConnectionBtn");
+    const seedTestProjectBtn = document.getElementById("seedTestProjectBtn");
     const toastEl = document.getElementById("toast");
 
-    // ============================================================
     // 5) دوال مساعدة
-    // ============================================================
-
-    /** عرض رسالة Toast */
     function showToast(message, type = "success") {
       toastEl.textContent = message;
       toastEl.className = `toast ${type} show`;
-      setTimeout(() => {
-        toastEl.classList.remove("show");
-      }, 4000);
+      setTimeout(() => toastEl.classList.remove("show"), 4500);
     }
 
-    /** التحقق مما إذا كان المستخدم مسؤولًا (عبر Custom Claim) */
-    async function isAdmin(user) {
+    /** التحقق من صلاحية المسؤول باستخدام Custom Claim (مع تحديث قسري للتوكن) */
+    async function checkAdminClaim(user, forceRefresh = true) {
       if (!user) return false;
       try {
-        const tokenResult = await user.getIdTokenResult();
+        // getIdTokenResult(true) يجبر على تحديث التوكن لضمان قراءة أحدث الـ claims
+        const tokenResult = await user.getIdTokenResult(forceRefresh);
         return tokenResult.claims.admin === true;
       } catch (e) {
         console.error("فشل التحقق من صلاحية المسؤول:", e);
@@ -708,20 +404,23 @@
       }
     }
 
-    /** تنسيق التاريخ */
     function formatDate(timestamp) {
       if (!timestamp) return "—";
-      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
-      return date.toLocaleDateString("ar-EG", {
-        year: "numeric",
-        month: "short",
-        day: "numeric"
-      });
+      try {
+        const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+        return date.toLocaleDateString("ar-EG", { year: "numeric", month: "short", day: "numeric" });
+      } catch { return "—"; }
     }
 
-    // ============================================================
+    /** صورة افتراضية للمشاريع التي لا تحتوي على صورة مرفوعة */
+    function getProjectImage(project) {
+      if (project.imageUrl) return project.imageUrl;
+      // صور عشوائية ثابتة من Picsum (للعرض فقط)
+      const seed = project.id ? project.id.charCodeAt(0) : 1;
+      return `https://picsum.photos/seed/${seed}/600/400`;
+    }
+
     // 6) عرض المشاريع للزوار (المنشورة فقط)
-    // ============================================================
     function renderVisitorProjects(projects) {
       if (!projects.length) {
         visitorProjectsGrid.innerHTML = `<div class="empty-state"><p>لا توجد مشاريع منشورة بعد.</p></div>`;
@@ -729,58 +428,39 @@
       }
       visitorProjectsGrid.innerHTML = projects.map(p => `
         <div class="project-card">
-          ${p.imageUrl ? `<img src="${p.imageUrl}" alt="${p.title}" loading="lazy" />` : ""}
+          <img src="${getProjectImage(p)}" alt="${p.title}" loading="lazy" />
           <div class="card-body">
             <span class="card-category">${p.category || "عام"}</span>
             <h3>${p.title}</h3>
-            <p>${p.description}</p>
+            <p>${p.description || ""}</p>
           </div>
         </div>
       `).join("");
     }
 
-    // الاستماع المباشر للمشاريع المنشورة (onSnapshot)
     let unsubscribeVisitor = null;
-
     function startVisitorListener() {
       if (unsubscribeVisitor) unsubscribeVisitor();
       const q = query(collection(db, "projects"), where("published", "==", true));
-      unsubscribeVisitor = onSnapshot(q,
-        (snapshot) => {
-          const projects = [];
-          snapshot.forEach(docSnap => {
-            projects.push({ id: docSnap.id, ...docSnap.data() });
-          });
-          // ترتيب حسب تاريخ الإنشاء (الأحدث أولًا) إن وُجد
-          projects.sort((a, b) => {
-            const ta = a.createdAt?.toMillis?.() || 0;
-            const tb = b.createdAt?.toMillis?.() || 0;
-            return tb - ta;
-          });
-          renderVisitorProjects(projects);
-        },
-        (error) => {
-          console.error("خطأ في الاستماع للمشاريع:", error);
-          visitorProjectsGrid.innerHTML = `<div class="empty-state"><p>تعذر تحميل المشاريع. تحقق من اتصال Firebase.</p></div>`;
-        }
-      );
+      unsubscribeVisitor = onSnapshot(q, (snapshot) => {
+        const projects = [];
+        snapshot.forEach(d => projects.push({ id: d.id, ...d.data() }));
+        projects.sort((a, b) => (b.createdAt?.toMillis?.() || 0) - (a.createdAt?.toMillis?.() || 0));
+        renderVisitorProjects(projects);
+      }, (error) => {
+        console.error("خطأ في الاستماع للمشاريع:", error);
+        visitorProjectsGrid.innerHTML = `<div class="empty-state"><p>تعذر تحميل المشاريع. تحقق من اتصال Firebase وقواعد الأمان.</p></div>`;
+      });
     }
-
-    // بدء الاستماع للزوار فورًا
     startVisitorListener();
 
-    // ============================================================
-    // 7) تسجيل الدخول / الخروج
-    // ============================================================
-
+    // 7) تسجيل الدخول
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value.trim();
       const password = document.getElementById("loginPassword").value;
-
       loginBtn.disabled = true;
       loginBtn.innerHTML = `<span class="spinner"></span> جاري الدخول...`;
-
       try {
         await signInWithEmailAndPassword(auth, email, password);
         // onAuthStateChanged سيتولى الباقي
@@ -795,90 +475,70 @@
       }
     });
 
+    // 8) تسجيل الخروج
     logoutBtn.addEventListener("click", async () => {
-      try {
-        await signOut(auth);
-        showToast("تم تسجيل الخروج بنجاح.", "success");
-      } catch (error) {
-        console.error("خطأ تسجيل الخروج:", error);
-        showToast("فشل تسجيل الخروج.", "error");
-      }
+      try { await signOut(auth); showToast("تم تسجيل الخروج.", "success"); }
+      catch (e) { showToast("فشل تسجيل الخروج.", "error"); }
     });
 
-    // ============================================================
-    // 8) مراقبة حالة المصادقة
-    // ============================================================
-
+    // 9) مراقبة حالة المصادقة (الحماية الحقيقية)
     let unsubscribeAdminProjects = null;
 
     onAuthStateChanged(auth, async (user) => {
-      if (user && await isAdmin(user)) {
-        // مسؤول موثّق
-        adminPanel.classList.add("active");
-        adminNavLink.style.display = "block";
-        loginSection.style.display = "none";
-        dashboardSection.style.display = "block";
-        adminEmailDisplay.textContent = user.email;
-
-        // بدء الاستماع لمشاريع المسؤول (كل المشاريع)
-        startAdminProjectsListener();
-      } else {
-        // غير مسؤول أو غير مسجل
-        adminPanel.classList.remove("active");
-        adminNavLink.style.display = "none";
-        loginSection.style.display = "block";
-        dashboardSection.style.display = "none";
-        adminEmailDisplay.textContent = "";
-        loginBtn.disabled = false;
-        loginBtn.textContent = "تسجيل الدخول";
-
-        if (unsubscribeAdminProjects) {
-          unsubscribeAdminProjects();
-          unsubscribeAdminProjects = null;
-        }
-
-        // إذا كان هناك مستخدم مسجل لكنه ليس مسؤولًا
-        if (user && !(await isAdmin(user))) {
+      if (user) {
+        const isAdmin = await checkAdminClaim(user, true);
+        if (isAdmin) {
+          // مسؤول موثّق
+          adminPanel.classList.add("active");
+          adminNavLink.style.display = "block";
+          loginSection.style.display = "none";
+          dashboardSection.style.display = "block";
+          adminEmailDisplay.textContent = user.email;
+          startAdminProjectsListener();
+        } else {
+          // مستخدم عادي (ليس مسؤولًا) -> تسجيل خروج فوري
           showToast("هذا الحساب لا يملك صلاحية المسؤول.", "error");
           await signOut(auth);
+          resetAdminUI();
         }
+      } else {
+        resetAdminUI();
       }
     });
 
-    // ============================================================
-    // 9) إدارة المشاريع في لوحة التحكم
-    // ============================================================
+    function resetAdminUI() {
+      adminPanel.classList.remove("active");
+      adminNavLink.style.display = "none";
+      loginSection.style.display = "block";
+      dashboardSection.style.display = "none";
+      adminEmailDisplay.textContent = "";
+      loginBtn.disabled = false;
+      loginBtn.textContent = "تسجيل الدخول";
+      if (unsubscribeAdminProjects) { unsubscribeAdminProjects(); unsubscribeAdminProjects = null; }
+    }
 
+    // 10) إدارة المشاريع في لوحة التحكم
     function startAdminProjectsListener() {
       if (unsubscribeAdminProjects) unsubscribeAdminProjects();
-      unsubscribeAdminProjects = onSnapshot(collection(db, "projects"),
-        (snapshot) => {
-          const projects = [];
-          snapshot.forEach(docSnap => {
-            projects.push({ id: docSnap.id, ...docSnap.data() });
-          });
-          projects.sort((a, b) => {
-            const ta = a.createdAt?.toMillis?.() || 0;
-            const tb = b.createdAt?.toMillis?.() || 0;
-            return tb - ta;
-          });
-          renderAdminProjectsTable(projects);
-        },
-        (error) => {
-          console.error("خطأ في الاستماع لمشاريع المسؤول:", error);
-          adminProjectsTableContainer.innerHTML = `<div class="empty-state"><p>تعذر تحميل المشاريع: ${error.message}</p></div>`;
-        }
-      );
+      unsubscribeAdminProjects = onSnapshot(collection(db, "projects"), (snapshot) => {
+        const projects = [];
+        snapshot.forEach(d => projects.push({ id: d.id, ...d.data() }));
+        projects.sort((a, b) => (b.createdAt?.toMillis?.() || 0) - (a.createdAt?.toMillis?.() || 0));
+        renderAdminProjectsTable(projects);
+      }, (error) => {
+        console.error("خطأ في الاستماع لمشاريع المسؤول:", error);
+        adminProjectsTableContainer.innerHTML = `<div class="empty-state"><p>تعذر تحميل المشاريع: ${error.message}</p></div>`;
+      });
     }
 
     function renderAdminProjectsTable(projects) {
       if (!projects.length) {
-        adminProjectsTableContainer.innerHTML = `<div class="empty-state"><p>لا توجد مشاريع. أضف مشروعك الأول!</p></div>`;
+        adminProjectsTableContainer.innerHTML = `<div class="empty-state"><p>لا توجد مشاريع. أضف مشروعك الأول أو استخدم زر "إضافة مشروع تجريبي".</p></div>`;
         return;
       }
       const rows = projects.map(p => `
         <tr>
-          <td>${p.imageUrl ? `<img src="${p.imageUrl}" class="table-thumb" alt="" />` : "—"}</td>
+          <td><img src="${getProjectImage(p)}" class="table-thumb" alt="" /></td>
           <td>${p.title}</td>
           <td>${p.category || "—"}</td>
           <td>${p.published ? "✅ منشور" : "⏸️ مسودة"}</td>
@@ -889,26 +549,13 @@
           </td>
         </tr>
       `).join("");
-
       adminProjectsTableContainer.innerHTML = `
         <div style="overflow-x:auto;">
           <table class="projects-table">
-            <thead>
-              <tr>
-                <th>الصورة</th>
-                <th>العنوان</th>
-                <th>التصنيف</th>
-                <th>الحالة</th>
-                <th>التاريخ</th>
-                <th>إجراءات</th>
-              </tr>
-            </thead>
+            <thead><tr><th>الصورة</th><th>العنوان</th><th>التصنيف</th><th>الحالة</th><th>التاريخ</th><th>إجراءات</th></tr></thead>
             <tbody>${rows}</tbody>
           </table>
-        </div>
-      `;
-
-      // ربط أزرار التعديل والحذف
+        </div>`;
       adminProjectsTableContainer.querySelectorAll(".edit-btn").forEach(btn => {
         btn.addEventListener("click", () => loadProjectForEdit(btn.dataset.id));
       });
@@ -917,37 +564,27 @@
       });
     }
 
-    /** تحميل مشروع للتعديل */
     async function loadProjectForEdit(id) {
       try {
-        const docRef = doc(db, "projects", id);
-        const docSnap = await getDoc(docRef);
-        if (!docSnap.exists()) {
-          showToast("المشروع غير موجود.", "error");
-          return;
-        }
+        const docSnap = await getDoc(doc(db, "projects", id));
+        if (!docSnap.exists()) { showToast("المشروع غير موجود.", "error"); return; }
         const p = docSnap.data();
         editProjectId.value = id;
         projectTitle.value = p.title || "";
         projectDesc.value = p.description || "";
         projectCategory.value = p.category || "";
         projectPublished.checked = p.published === true;
-        projectImage.value = ""; // لا يمكن ملء input file
-        imagePreview.innerHTML = p.imageUrl
-          ? `<img src="${p.imageUrl}" style="max-width:200px; border-radius:8px;" />`
-          : "";
-
-        // التبديل إلى تبويب النموذج
+        projectImage.value = "";
+        imagePreview.innerHTML = p.imageUrl ? `<img src="${p.imageUrl}" style="max-width:200px; border-radius:8px;" />` : "";
         document.querySelector('[data-tab="addProject"]').click();
         cancelEditBtn.style.display = "inline-flex";
         saveProjectBtn.textContent = "حفظ التعديلات";
-      } catch (error) {
-        console.error("خطأ تحميل المشروع:", error);
+      } catch (e) {
+        console.error(e);
         showToast("فشل تحميل المشروع.", "error");
       }
     }
 
-    /** حذف مشروع */
     async function deleteProject(id) {
       if (!confirm("هل أنت متأكد من حذف هذا المشروع؟")) return;
       try {
@@ -955,28 +592,20 @@
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           const data = docSnap.data();
-          // حذف الصورة من Storage إن وُجدت
           if (data.imageUrl) {
-            try {
-              const imageRef = ref(storage, data.imageUrl);
-              await deleteObject(imageRef);
-            } catch (e) {
-              console.warn("لم يتم حذف الصورة (قد تكون غير موجودة):", e);
-            }
+            try { await deleteObject(ref(storage, data.imageUrl)); }
+            catch (e) { console.warn("لم يتم حذف الصورة (قد تكون غير موجودة):", e); }
           }
         }
         await deleteDoc(docRef);
         showToast("تم حذف المشروع بنجاح.", "success");
-      } catch (error) {
-        console.error("خطأ حذف المشروع:", error);
-        showToast("فشل حذف المشروع: " + error.message, "error");
+      } catch (e) {
+        console.error(e);
+        showToast("فشل حذف المشروع: " + e.message, "error");
       }
     }
 
-    // ============================================================
-    // 10) حفظ المشروع (إضافة أو تعديل)
-    // ============================================================
-
+    // 11) حفظ المشروع (إضافة / تعديل)
     projectForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const isEdit = !!editProjectId.value;
@@ -987,12 +616,7 @@
       const imageFile = projectImage.files[0];
 
       if (!title || !description || !category) {
-        showToast("يرجى ملء جميع الحقول المطلوبة.", "error");
-        return;
-      }
-      if (!isEdit && !imageFile) {
-        showToast("يرجى اختيار صورة للمشروع.", "error");
-        return;
+        showToast("يرجى ملء جميع الحقول المطلوبة.", "error"); return;
       }
 
       saveProjectBtn.disabled = true;
@@ -1000,8 +624,6 @@
 
       try {
         let imageUrl = null;
-
-        // رفع الصورة إلى Firebase Storage (إن وُجدت)
         if (imageFile) {
           const storageRef = ref(storage, `projects/${Date.now()}_${imageFile.name}`);
           await uploadBytes(storageRef, imageFile);
@@ -1009,33 +631,19 @@
         }
 
         if (isEdit) {
-          // تعديل مشروع موجود
-          const docRef = doc(db, "projects", editProjectId.value);
-          const updateData = {
-            title,
-            description,
-            category,
-            published,
-            updatedAt: serverTimestamp()
-          };
+          const updateData = { title, description, category, published, updatedAt: serverTimestamp() };
           if (imageUrl) updateData.imageUrl = imageUrl;
-          await updateDoc(docRef, updateData);
+          await updateDoc(doc(db, "projects", editProjectId.value), updateData);
           showToast("تم تعديل المشروع بنجاح.", "success");
         } else {
-          // إضافة مشروع جديد
           await addDoc(collection(db, "projects"), {
-            title,
-            description,
-            category,
-            imageUrl,
-            published,
+            title, description, category, published,
+            imageUrl: imageUrl || "", // إذا لم توجد صورة، نترك الحقل فارغًا وتُستخدم الصورة الافتراضية
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
           });
           showToast("تمت إضافة المشروع بنجاح.", "success");
         }
-
-        // إعادة تعيين النموذج
         resetProjectForm();
       } catch (error) {
         console.error("خطأ حفظ المشروع:", error);
@@ -1046,7 +654,6 @@
       }
     });
 
-    /** إعادة تعيين النموذج */
     function resetProjectForm() {
       projectForm.reset();
       editProjectId.value = "";
@@ -1054,27 +661,19 @@
       cancelEditBtn.style.display = "none";
       saveProjectBtn.textContent = "حفظ المشروع";
     }
-
     cancelEditBtn.addEventListener("click", resetProjectForm);
 
-    // ============================================================
-    // 11) اختبار اتصال Firebase (قراءة حقيقية)
-    // ============================================================
-
+    // 12) اختبار اتصال Firebase (قراءة حقيقية)
     testConnectionBtn.addEventListener("click", async () => {
       testConnectionBtn.disabled = true;
       testConnectionBtn.innerHTML = `<span class="spinner"></span> جاري الاختبار...`;
-
       try {
-        // قراءة مستند واحد من مجموعة projects (حتى لو فارغة)
         const snap = await getDocs(collection(db, "projects"));
-        showToast(`✅ الاتصال ناجح. عدد المشاريع: ${snap.size}`, "success");
+        showToast(`✅ الاتصال ناجح. عدد المشاريع في Firestore: ${snap.size}`, "success");
       } catch (error) {
         console.error("فشل اختبار الاتصال:", error);
         let msg = "فشل الاتصال بـ Firebase: " + error.message;
-        if (error.code === "permission-denied") {
-          msg = "فشل الاتصال: صلاحيات القراءة مرفوضة. تحقق من قواعد الأمان.";
-        }
+        if (error.code === "permission-denied") msg = "فشل الاتصال: صلاحيات القراءة مرفوضة. تحقق من قواعد Firestore.";
         showToast(msg, "error");
       } finally {
         testConnectionBtn.disabled = false;
@@ -1082,89 +681,61 @@
       }
     });
 
-    // ============================================================
-    // 12) معاينة الصورة قبل الرفع
-    // ============================================================
-
-    projectImage.addEventListener("change", () => {
-      const file = projectImage.files[0];
-      if (!file) {
-        imagePreview.innerHTML = "";
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        imagePreview.innerHTML = `<img src="${e.target.result}" style="max-width:200px; border-radius:8px;" />`;
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // ============================================================
-    // 13) التبديل بين تبويبات لوحة التحكم
-    // ============================================================
-
-    document.querySelectorAll(".admin-tab").forEach(tab => {
-      tab.addEventListener("click", () => {
-        document.querySelectorAll(".admin-tab").forEach(t => t.classList.remove("active"));
-        document.querySelectorAll(".admin-section").forEach(s => s.classList.remove("active"));
-        tab.classList.add("active");
-        const target = tab.dataset.tab;
-        document.getElementById(target + "Section").classList.add("active");
-
-        // إذا كان التبويب هو إضافة مشروع، أعد تعيين النموذج
-        if (target === "addProject" && !editProjectId.value) {
-          resetProjectForm();
-        }
-      });
-    });
-
-    // ============================================================
-    // 14) إضافة مشروع تجريبي (Test Project) إذا لم يكن موجودًا
-    //     (مرة واحدة فقط، ويتم ذلك من لوحة التحكم بعد الدخول)
-    // ============================================================
-
-    window.addTestProject = async function () {
+    // 13) إضافة مشروع تجريبي (Test Project)
+    seedTestProjectBtn.addEventListener("click", async () => {
+      seedTestProjectBtn.disabled = true;
+      seedTestProjectBtn.innerHTML = `<span class="spinner"></span> جاري الإضافة...`;
       try {
         const q = query(collection(db, "projects"), where("title", "==", "Test Project"));
         const snap = await getDocs(q);
         if (!snap.empty) {
           showToast("المشروع التجريبي موجود بالفعل.", "info");
-          return;
+        } else {
+          await addDoc(collection(db, "projects"), {
+            title: "Test Project",
+            description: "مشروع تجريبي للتحقق من الاتصال بقاعدة البيانات والصور.",
+            category: "تجريبي",
+            imageUrl: "",
+            published: true,
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+          });
+          showToast("تمت إضافة المشروع التجريبي بنجاح.", "success");
         }
-        await addDoc(collection(db, "projects"), {
-          title: "Test Project",
-          description: "مشروع تجريبي للتحقق من الاتصال بقاعدة البيانات.",
-          category: "تجريبي",
-          imageUrl: "",
-          published: true,
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp()
-        });
-        showToast("تمت إضافة المشروع التجريبي.", "success");
       } catch (error) {
-        console.error("خطأ إضافة المشروع التجريبي:", error);
+        console.error(error);
         showToast("فشل إضافة المشروع التجريبي: " + error.message, "error");
+      } finally {
+        seedTestProjectBtn.disabled = false;
+        seedTestProjectBtn.textContent = "🧪 إضافة مشروع تجريبي (Test Project)";
       }
-    };
+    });
 
-    // ============================================================
-    // 15) إظهار رابط لوحة التحكم في شريط التنقل عند الحاجة
-    // ============================================================
+    // 14) معاينة الصورة قبل الرفع
+    projectImage.addEventListener("change", () => {
+      const file = projectImage.files[0];
+      if (!file) { imagePreview.innerHTML = ""; return; }
+      const reader = new FileReader();
+      reader.onload = (e) => { imagePreview.innerHTML = `<img src="${e.target.result}" style="max-width:200px; border-radius:8px;" />`; };
+      reader.readAsDataURL(file);
+    });
 
-    // الرابط موجود في HTML لكن مخفي افتراضيًا، ويظهر فقط للمسؤول
-    // (تم التحكم به عبر onAuthStateChanged)
+    // 15) التبديل بين التبويبات
+    document.querySelectorAll(".admin-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".admin-tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".admin-section").forEach(s => s.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab + "Section").classList.add("active");
+        if (tab.dataset.tab === "addProject" && !editProjectId.value) resetProjectForm();
+      });
+    });
 
-    // ============================================================
-    // 16) التمرير السلس
-    // ============================================================
-
+    // 16) تمرير سلس
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-        }
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
       });
     });
 
